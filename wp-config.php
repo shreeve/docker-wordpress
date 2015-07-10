@@ -89,6 +89,14 @@ define('WP_SITEURL','https://wordpress.crossoverhealth.com');
 /* Enable Multisite */
 define('WP_ALLOW_MULTISITE', true);
 
+/* Actual Multisite? */
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', true);
+define('DOMAIN_CURRENT_SITE', 'wordpress.crossoverhealth.com');
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
+
 /* Force HTTPS if we're behind a load balancer */
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
   $_SERVER['HTTPS'] = 'on';

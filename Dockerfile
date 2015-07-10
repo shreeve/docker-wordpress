@@ -11,7 +11,8 @@ RUN apt-get update && DEBIAN_FRONTEND="noninteractive" \
 # Adjust configuration
 RUN sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
 RUN a2enmod rewrite
-ADD wp-config.php /app/wp-config.php
+ADD wp-config.php /app/
+ADD .htaccess /app/
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
 
