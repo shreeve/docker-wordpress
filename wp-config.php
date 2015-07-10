@@ -80,13 +80,20 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
+/* ==[ Begin custom edits ]== */
+
 /* Hard code for now */
 define('WP_HOME','https://wordpress.crossoverhealth.com');
 define('WP_SITEURL','https://wordpress.crossoverhealth.com');
 
+/* Enable Multisite */
+define('WP_ALLOW_MULTISITE', true);
+
 /* Force HTTPS if we're behind a load balancer */
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
   $_SERVER['HTTPS'] = 'on';
+
+/* ==[ End custom edits ]== */
 
 /* That's all, stop editing! Happy blogging. */
 
