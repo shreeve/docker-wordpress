@@ -80,15 +80,18 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', false);
 
+/* Force HTTPS if we're behind a load balancer */
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
+  $_SERVER['HTTPS'] = 'on';
+
+/* Inherit the domain name */
+define('RELOCATE',true);
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
   define('ABSPATH', dirname(__FILE__) . '/');
-
-/* Force HTTPS if we're behind a load balancer */
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
-  $_SERVER['HTTPS'] = 'on';
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
