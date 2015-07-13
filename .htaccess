@@ -11,3 +11,6 @@ RewriteRule ^ - [L]
 RewriteRule ^(wp-(content|admin|includes).*) $1 [L]
 RewriteRule ^(.*\.php)$ $1 [L]
 RewriteRule . index.php [L]
+
+php_value post_max_size       32M
+php_value upload_max_filesize 32M
