@@ -11,6 +11,9 @@ COPY wp-config.php /app/
 COPY .htaccess /app/
 COPY run.sh /run.sh
 
+ADD plugins/updraftplus.tar.gz           /app/wp-content/plugins/
+ADD plugins/upload-larger-plugins.tar.gz /app/wp-content/plugins/
+
 RUN sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf && \
     a2enmod rewrite && \
     /usr/sbin/php5enmod mcrypt && \
