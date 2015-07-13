@@ -4,7 +4,7 @@ WORKDIR /
 
 # Install baseline
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" \
-    apt-get -yq install git mysql-client php5-gd && \
+    apt-get -yq install git mysql-client && \
     rm -rf /var/lib/apt/lists/* \
     rm -rf /app && git clone --branch 4.2-branch --depth=1 https://github.com/WordPress/WordPress.git /app
 
