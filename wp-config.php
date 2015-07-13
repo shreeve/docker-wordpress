@@ -84,8 +84,8 @@ define('WP_DEBUG', false);
 /* ==[ Begin custom edits ]== */
 
 /* Hard code for now */
-// define('WP_HOME','https://wordpress.crossoverhealth.com');
-// define('WP_SITEURL','https://wordpress.crossoverhealth.com');
+// define('WP_HOME','http://crossoverhealth.com');
+// define('WP_SITEURL','http://crossoverhealth.com');
 
 /* Enable Multisite */
 // define('WP_ALLOW_MULTISITE', true);
@@ -93,7 +93,7 @@ define('WP_DEBUG', false);
 /* Actual Multisite? */
 // define('MULTISITE', true);
 // define('SUBDOMAIN_INSTALL', true);
-// define('DOMAIN_CURRENT_SITE', 'wordpress.crossoverhealth.com');
+// define('DOMAIN_CURRENT_SITE', 'crossoverhealth.com');
 // define('PATH_CURRENT_SITE', '/');
 // define('SITE_ID_CURRENT_SITE', 1);
 // define('BLOG_ID_CURRENT_SITE', 1);
