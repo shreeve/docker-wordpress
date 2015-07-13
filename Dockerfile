@@ -2,22 +2,21 @@ FROM tutum/apache-php:latest
 MAINTAINER Steve Shreeve <steve.shreeve@gmail.com>
 WORKDIR /
 
-# Install baseline
 RUN apt-get update && DEBIAN_FRONTEND="noninteractive" \
     apt-get -yq install git mysql-client php5-gd php5-mcrypt && \
     rm -rf /var/lib/apt/lists/* \
     rm -rf /app && git clone --branch 4.2-branch --depth=1 https://github.com/WordPress/WordPress.git /app
 
-# Adjust configuration
-RUN sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
-RUN a2enmod rewrite
-RUN /usr/sbin/php5enmod mcrypt
-ADD wp-config.php /app/
-ADD .htaccess /app/
-ADD run.sh /run.sh
-RUN chmod +x /*.sh
+COPY wp-config.php /app/
+COPY .htaccess /app/
+COPY run.sh /run.sh
 
-# Default env
+RUN sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf && \
+    a2enmod rewrite && \
+    /usr/sbin/php5enmod mcrypt && \
+    chmod +x /*.sh && \
+    mkdir -p /app/wp-content/mu-plugins
+
 ENV DB_HOST **LinkMe**
 ENV DB_PORT 3306
 ENV DB_NAME wordpress
