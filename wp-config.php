@@ -84,8 +84,8 @@ define('WP_DEBUG', false);
 /* ==[ Begin custom edits ]== */
 
 /* Hard code for now */
-// define('WP_HOME','http://crossoverhealth.com');
-// define('WP_SITEURL','http://crossoverhealth.com');
+define('WP_HOME','http://crossoverhealth.com');
+define('WP_SITEURL','http://crossoverhealth.com');
 
 /* Enable Multisite */
 // define('WP_ALLOW_MULTISITE', true);
