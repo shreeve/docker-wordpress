@@ -42,14 +42,15 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '_)xkII5E6oj;9U)Vp.LBZz]fpx~HQe8&RsFD`)%bn5BVqBz>)U.2`oP&I?Hl,Q?@');
-define('SECURE_AUTH_KEY',  'yau6;j?X[P3h|Og=|;&>v0|z%Dy&? N9tADcnDL0.||}}{_4[h4Jg.m@^;gndvHH');
-define('LOGGED_IN_KEY',    'Gp^h;Ph}`$|w+&J~0ezKx|H-wqOZR=&8_H^g{ F,8of|a ]/olNL0:=j>:zmwBPT');
-define('NONCE_KEY',        '|_1AF<uXze{BOd+@kl82_sE1=eBW)V}$L$Y$)/hG]X6{jF?-ncf%r|EF6<k$Z|<:');
-define('AUTH_SALT',        '[gVp do1Z.x.[2R|5(=9FKVv%V _C[RX!>T9`.,]Njy+u+AiUY`Qn>iY0/|Jox?-');
-define('SECURE_AUTH_SALT', '`+Ew<[^(7b-`awEt--Ksh`1Fv(lU;n$d-->Ec!9e+2]ser 0O[zGq/#PgqC[yN{]');
-define('LOGGED_IN_SALT',   'Be]<R2{@LV={^v t}~Z]_H,MF:_-K$5C?+:HftEmI/cG~S8^#2L-q~*eY=o3aRWK');
-define('NONCE_SALT',       '][*sHxMdV`OQD?E|k{Gq#fx[8bN%9^0[6O}<(f}zfYK(C,Nvq9G>X<f[Y;a|_1}o');
+$sha = getenv('WORDPRESS_SALT_SEED') ? getenv('WORDPRESS_SALT_SEED') : getenv('DB_PASS');
+$sha = sha1($sha, true); define('AUTH_KEY',         base64_encode($sha));
+$sha = sha1($sha, true); define('SECURE_AUTH_KEY',  base64_encode($sha));
+$sha = sha1($sha, true); define('LOGGED_IN_KEY',    base64_encode($sha));
+$sha = sha1($sha, true); define('NONCE_KEY',        base64_encode($sha));
+$sha = sha1($sha, true); define('AUTH_SALT',        base64_encode($sha));
+$sha = sha1($sha, true); define('SECURE_AUTH_SALT', base64_encode($sha));
+$sha = sha1($sha, true); define('LOGGED_IN_SALT',   base64_encode($sha));
+$sha = sha1($sha, true); define('NONCE_SALT',       base64_encode($sha));
 
 /**#@-*/
 
