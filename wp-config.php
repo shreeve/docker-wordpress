@@ -98,6 +98,11 @@ define('WP_DEBUG', false);
 // define('SITE_ID_CURRENT_SITE', 1);
 // define('BLOG_ID_CURRENT_SITE', 1);
 
+/* Various plugin settings */
+define('SUNRISE', 'on');
+define('WPCACHEHOME', ABSPATH . 'wp-content/plugins/wp-super-cache/'); //Added by WP-Cache Manager
+// define('CONCATENATE_SCRIPTS', false);
+
 /* Force HTTPS if we're behind a load balancer */
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
   $_SERVER['HTTPS'] = 'on';
